@@ -13,5 +13,7 @@ jobs:
       - name: Send notification to test repository
         uses: actions/http-call@v2
         with:
-          url: <YOUR_WEBHOOK_URL>
+          url: https://api.github.com/repos/<your-username>/test/dispatches
           method: POST
+          headers: '{"Authorization": "Bearer <YOUR_PERSONAL_ACCESS_TOKEN>", "Content-Type": "application/json"}'
+          body: '{"event_type": "trigger-tests"}'
