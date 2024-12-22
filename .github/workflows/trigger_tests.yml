@@ -15,5 +15,5 @@ jobs:
         with:
           url: https://api.github.com/repos/<Sneha781>/test/dispatches
           method: POST
-          headers: '{"Authorization": "Bearer <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>", "Content-Type": "application/json"}'
+          headers: '{"Authorization": "Bearer < secrets,PERSONAL_ACCESS_TOKEN>", "Content-Type": "application/json"}'
           body: '{"event_type": "trigger-tests"}'
