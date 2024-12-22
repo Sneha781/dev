@@ -1,0 +1,21 @@
+name: Trigger Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify_test_repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send notification to test repository using curl
+        run: |
+          curl -X POST https://api.github.com/repos/Sneha781/test/dispatches \
+          -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{"event_type": "trigger-tests"}'
