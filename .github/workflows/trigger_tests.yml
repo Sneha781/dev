@@ -10,10 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send notification to test repository
-        uses: actions/http-call@v2
-        with:
-          url: https://api.github.com/repos/<Sneha781>/test/dispatches
-          method: POST
-          headers: '{"Authorization": "Bearer < secrets,PERSONAL_ACCESS_TOKEN>", "Content-Type": "application/json"}'
-          body: '{"event_type": "trigger-tests"}'
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send notification to test repository using curl
+        run: |
+          curl -X POST https://api.github.com/repos/Sneha781/test/dispatches \
+          -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{"event_type": "trigger-tests"}'
