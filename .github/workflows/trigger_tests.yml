@@ -1,0 +1,17 @@
+name: Trigger Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify_test_repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send notification to test repository
+        uses: actions/http-call@v2
+        with:
+          url: <YOUR_WEBHOOK_URL>
+          method: POST
