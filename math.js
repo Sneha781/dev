@@ -1,14 +1,12 @@
-// Import math.js (for Node.js)
-const math = require('mathjs');
+// Matrix creation and basic operations
+let matrixA = math.matrix([[1, 2], [3, 4]]);
+let matrixB = math.matrix([[5, 6], [7, 8]]);
 
-// Addition
-console.log(math.add(2, 3));  // 5
+// Matrix addition
+let matrixSum = math.add(matrixA, matrixB);
+console.log(`Matrix Addition: ${math.format(matrixSum)}`);
 
-// Subtraction
-console.log(math.subtract(7, 5));  // 2
+// Matrix multiplication
+let matrixProduct = math.multiply(matrixA, matrixB);
+console.log(`Matrix Multiplication: ${math.format(matrixProduct)}`);
 
-// Multiplication
-console.log(math.multiply(4, 6));  // 24
-
-// Division
-console.log(math.divide(9, 3));  // 3
