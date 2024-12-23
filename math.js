@@ -1,4 +1,4 @@
-const add = require('tests/math.test.js');
+ const add = require('tests/math.test.js');
 
 // Calculate trigonometric functions
 const angleInRadians = math.pi / 4; // 45 degrees in radians
