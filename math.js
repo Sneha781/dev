@@ -1,7 +1,5 @@
-module.exports = {
-  testMatch: [
-    '**/tests/**/*.test.js', // Search in tests folder
-    '**/?(*.)+(spec|test).js', // Or match .spec.js or .test.js files
-  ],
-};
+// example.test.js
+test('Simple test', () => {
+  expect(1 + 1).toBe(2);
+});
 
