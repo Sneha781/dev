@@ -1,11 +1,26 @@
- const add = require('tests/math.test.js');
+// math.js
 
-// Calculate trigonometric functions
-const angleInRadians = math.pi / 4; // 45 degrees in radians 
-const sinValue = math.sin(angleInRadians);  // sin(45 degrees)
-const cosValue = math.cos(angleInRadians);  // cos(45 degrees)
-const tanValue = math.tan(angleInRadians);  // tan(45 degrees)
+// Function to add two numbers
+function add(a, b) {
+  return a + b;
+}
 
-console.log('sin(45°):', sinValue);
-console.log('cos(45°):', cosValue);
-console.log('tan(45°):', tanValue);
+// Function to subtract two numbers
+function subtract(a, b) {
+  return a - b;
+}
+
+// Function to multiply two numbers
+function multiply(a, b) {
+  return a * b;
+}
+
+// Function to divide two numbers
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error('Cannot divide by zero');
+  }
+  return a / b;
+}
+
+module.exports = { add, subtract, multiply, divide };
