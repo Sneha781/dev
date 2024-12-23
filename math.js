@@ -1,4 +1,4 @@
-const math = require('mathjs');
+const add = require('../../dev/math');
 
 // Calculate trigonometric functions
 const angleInRadians = math.pi / 4; // 45 degrees in radians
